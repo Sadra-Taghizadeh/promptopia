@@ -3,7 +3,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
@@ -72,14 +71,27 @@
 }
 
 /* Tailwind Styles */
-@layer base{
+
+@layer components{
+
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
 
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover: text-black text-center text-sm font-inter flex items-center justify-center;
+.hover-black_btn:hover {
+  @apply bg-white text-black;
 }
+
+/* Apply hover styles using the hover utility class */
+.black_btn {
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all text-center text-sm font-inter flex items-center justify-center hover-black_btn;
+}
+/* .black_btn {
+    @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover: text-black text-center text-sm font-inter flex items-center justify-center;
+  } */
+ 
+
+
 
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
